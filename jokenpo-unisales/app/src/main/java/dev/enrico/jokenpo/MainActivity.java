@@ -15,32 +15,38 @@ public class MainActivity extends AppCompatActivity {
     private int playerOpt = 0;
     private int appOpt = 0;
 
+    ImageView stoneImg, paperImg, scissorsImg, playerImgView, appImgView;
+
+     Button playBt;
+
+    TextView textRes;
+
+    final int[] images = {R.drawable.stone, R.drawable.paper, R.drawable.scissors};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ImageView stoneImg = findViewById(R.id.stone);
-        final ImageView paperImg = findViewById(R.id.paper);
-        final ImageView scissorsImg = findViewById(R.id.scissors);
+        stoneImg = findViewById(R.id.stone);
+        paperImg = findViewById(R.id.paper);
+        scissorsImg = findViewById(R.id.scissors);
 
-        final ImageView playerImgView = findViewById(R.id.playerImgView);
-        final ImageView appImgView = findViewById(R.id.appImgView);
+        playerImgView = findViewById(R.id.playerImgView);
+        appImgView = findViewById(R.id.appImgView);
 
-        final Button playBt = findViewById(R.id.playBt);
+        playBt = findViewById(R.id.playBt);
 
-        final TextView textView = findViewById(R.id.resultTxt);
+        textRes = findViewById(R.id.resultTxt);
 
-        final int[] images = {R.drawable.stone, R.drawable.paper, R.drawable.scissors};
 
 
         stoneImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chooseOption(0);
-                playerImgView.setImageResource(images[playerOpt]);
-                appImgView.setImageResource(R.drawable.square);
+                reset();
             }
         });
 
@@ -48,17 +54,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 chooseOption(1);
-                playerImgView.setImageResource(images[playerOpt]);
-                appImgView.setImageResource(R.drawable.square);
+                reset();
             }
         });
+
+
 
         scissorsImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chooseOption(2);
-                playerImgView.setImageResource(images[playerOpt]);
-                appImgView.setImageResource(R.drawable.square);
+                reset();
             }
         });
 
@@ -66,19 +72,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (playerOpt == appOpt) {
-                    textView.setText("Empate!");
+                    textRes.setText("Empate!");
                 } else if ((playerOpt == 0 && appOpt == 2) ||
                         (playerOpt == 1 && appOpt == 0) ||
                         (playerOpt == 2 && appOpt == 1)) {
-                    textView.setText("Você ganhou!");
+                    textRes.setText("Você ganhou!");
                 } else {
-                    textView.setText("Você perdeu!");
+                    textRes.setText("Você perdeu!");
                 }
                 appImgView.setImageResource(images[appOpt]);
 
             }
         });
 
+    }
+    public void reset() {
+        playerImgView.setImageResource(images[playerOpt]);
+        appImgView.setImageResource(R.drawable.square);
+        textRes.setText("Resultado");
     }
 
     public void chooseOption(int opt) {
