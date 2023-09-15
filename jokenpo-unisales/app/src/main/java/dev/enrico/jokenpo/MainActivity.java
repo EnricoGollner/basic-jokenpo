@@ -35,12 +35,12 @@ public class MainActivity extends AppCompatActivity {
         final int[] images = {R.drawable.stone, R.drawable.paper, R.drawable.scissors};
 
 
-
         stoneImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chooseOption(0);
                 playerImgView.setImageResource(images[playerOpt]);
+                appImgView.setImageResource(R.drawable.square);
             }
         });
 
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 chooseOption(1);
                 playerImgView.setImageResource(images[playerOpt]);
+                appImgView.setImageResource(R.drawable.square);
             }
         });
 
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 chooseOption(2);
                 playerImgView.setImageResource(images[playerOpt]);
+                appImgView.setImageResource(R.drawable.square);
             }
         });
 
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if ((playerOpt == 0 && appOpt == 2) ||
                         (playerOpt == 1 && appOpt == 0) ||
                         (playerOpt == 2 && appOpt == 1)) {
-                    textView.setText("Você ganhow!");
+                    textView.setText("Você ganhou!");
                 } else {
                     textView.setText("Você perdeu!");
                 }
