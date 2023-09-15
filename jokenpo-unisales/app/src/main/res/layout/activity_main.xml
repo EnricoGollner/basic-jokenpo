@@ -11,14 +11,14 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="65dp"
-        app:layout_constraintEnd_toStartOf="@+id/app"
+        app:layout_constraintEnd_toStartOf="@+id/appImgView"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/player"
+        app:layout_constraintStart_toEndOf="@+id/playerImgView"
         app:layout_constraintTop_toBottomOf="@+id/paper"
         app:srcCompat="@drawable/versus" />
 
     <ImageView
-        android:id="@+id/app"
+        android:id="@+id/appImgView"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="65dp"
@@ -29,7 +29,7 @@
         app:srcCompat="@drawable/square" />
 
     <ImageView
-        android:id="@+id/player"
+        android:id="@+id/playerImgView"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="65dp"
@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/paper"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/tesoura" />
+        app:srcCompat="@drawable/scissors" />
 
     <ImageView
         android:id="@+id/paper"
@@ -59,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/stone"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/papel" />
+        app:srcCompat="@drawable/paper" />
 
     <TextView
         android:id="@+id/textView"
@@ -77,11 +77,36 @@
         android:id="@+id/stone"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="68dp"
         app:layout_constraintEnd_toStartOf="@+id/paper"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/pedra" />
+        app:srcCompat="@drawable/stone" />
+
+    <TextView
+        android:id="@+id/resultTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Resultado"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playBt" />
+
+    <Button
+        android:id="@+id/playBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="40dp"
+        android:text="JOGAR"
+        app:layout_constraintBottom_toTopOf="@+id/resultTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageVs"
+        app:layout_constraintVertical_bias="0.35" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
