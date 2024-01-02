@@ -1,2 +1,2 @@
 # basic-jokenpo
-Java Android project
+Java Android project - College project
